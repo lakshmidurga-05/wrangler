@@ -197,6 +197,21 @@ CDAP IRC Channel: [#cdap on irc.freenode.net](http://webchat.freenode.net?channe
 
 CDAP Users on Slack: [cdap-users team](https://cdap-users.herokuapp.com)
 
+## Enhanced Wrangler Features
+
+This release now includes native support for parsing byte size and time duration units, along with the new directive `aggregate-stats`.
+
+### aggregate-stats Directive
+
+**Usage:**
+
+- **:data_transfer_size** – The source column containing byte size values (e.g., "10KB", "1.5MB").
+- **:response_time** – The source column containing time duration values (e.g., "150ms", "2.1s").
+- **total_size_mb** – The target column name where the total size (in megabytes) will be stored.
+- **total_time_sec** – The target column name where the total time (in seconds) will be stored.
+
+The directive aggregates values by converting byte sizes to bytes and time durations to milliseconds, then sums these values. Finally, the totals are converted to megabytes (MB) for size and seconds for time.
+
 
 ## License and Trademarks
 
